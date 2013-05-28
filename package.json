@@ -1,0 +1,21 @@
+{
+  "name": "yummly-mobile-app-jqm",
+  "version": "0.0.0",
+  "description": "An HTML5 mobile application built with backbonejs, requirejs and jQuery Mobile that uses the Yummly API",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~3.2.5",
+    "stylus": "~0.32.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": "",
+  "keywords": [
+    "yummly"
+  ],
+  "author": "Riccardo Coppola",
+  "license": "BSD"
+}

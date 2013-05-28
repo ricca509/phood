@@ -1,0 +1,17 @@
+<img src='<%= images[0].hostedLargeUrl %>' style="width: 100%" />
+<h3><%= name %></h3>
+Recipe by
+<a href='<%= source.sourceSiteUrl %>'><%= source.sourceDisplayName %></a>
+<p>Rating <%= rating %></p>
+<p>Recipe for <%= numberOfServings %></p>
+<p>Ingredients</p>
+<ul data-role="listview" data-inset="true" class="ingredients">
+<% _.each(ingredientLines, function(ingredient) { %>
+    <li>
+        <%= ingredient %>
+    </li>
+<% }); %>
+</ul>
+<p>Instructions</p>
+<a href='<%= source.sourceRecipeUrl %>'>Read all the instructions on "<%= source.sourceDisplayName %>" website</a>
+
