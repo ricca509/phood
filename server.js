@@ -1,6 +1,7 @@
 var express = require('express'),
     stylus = require('stylus'),
-	http = require('http');
+	http = require('http'),
+    config = require('./config');
 
 var app = express();
 
@@ -19,7 +20,7 @@ app.get('/recipes/q=:q', function(req, res) {
     var options = {
         host: 'api.yummly.com',
         port: 80,
-        path: '/v1/api/recipes?_app_id=9476205d&_app_key=ea5cc1be824b8947feaef714e80b3fab&requirePictures=true&q=' + encodeURIComponent(req.params.q),
+        path: '/v1/api/recipes?_app_id=' + config.yummlyAppId + '&_app_key=' + config.yummlyAppKey + '&requirePictures=true&q=' + encodeURIComponent(req.params.q),
         method: 'GET'
     };
 
@@ -56,7 +57,7 @@ app.get('/recipes/:id', function(req, res) {
     var options = {
         host: 'api.yummly.com',
         port: 80,
-        path: '/v1/api/recipe/' + req.params.id + '?_app_id=9476205d&_app_key=ea5cc1be824b8947feaef714e80b3fab',
+        path: '/v1/api/recipe/' + req.params.id + '?_app_id=' + config.yummlyAppId + '&_app_key=' + config.yummlyAppKey,
         method: 'GET'
     };
 
@@ -93,7 +94,7 @@ app.get('/recipes', function(req, res) {
 	var options = {
 	  host: 'api.yummly.com',
 	  port: 80,
-	  path: '/v1/api/recipes?_app_id=9476205d&_app_key=ea5cc1be824b8947feaef714e80b3fab&requirePictures=true',
+	  path: '/v1/api/recipes?_app_id=' + config.yummlyAppId + '&_app_key=' + config.yummlyAppKey,
 	  method: 'GET'
 	};
 

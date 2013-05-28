@@ -21,17 +21,13 @@ define([
 
         routes: {
             'recipes': 'getRecipes',
-            'recipes/q=:q': 'search',
+            'recipes/q=:q': 'getRecipes',
             'recipes/:id': 'getRecipe',            
             '': 'main'
         },
 
         main: function () {
             this.navigate('recipes', { trigger: true });
-        },
-
-        search: function(q) {
-            this.getRecipes(q);
         },
 
         getRecipe: function(id) {
