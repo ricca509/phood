@@ -1,6 +1,6 @@
-var config = {
-	yummlyAppId: '9476205d',
-	yummlyAppKey: 'ea5cc1be824b8947feaef714e80b3fab'
+var yummlyCredential = {
+	id: '9476205d',
+	key: 'ea5cc1be824b8947feaef714e80b3fab'
 };
 
-module.exports = config;
+exports.yummlyCredential = yummlyCredential;
