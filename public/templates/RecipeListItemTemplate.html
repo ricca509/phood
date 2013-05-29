@@ -5,6 +5,11 @@
 			<div style="padding: 10px;">
 				<h4><%= recipeName %></h4>
 				<div data-use="rating"></div>
+				<span style="position: absolute; right: 10px; bottom: 10px;">
+				<% if (totalTimeInSeconds) { %>
+				  <%= totalTimeInSeconds / 60 %>'
+				<% } %>					
+				</span>
 			</div>			
 		</div>				
 	</div>	

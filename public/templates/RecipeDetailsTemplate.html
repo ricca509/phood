@@ -1,17 +1,25 @@
-<img src='<%= images[0].hostedLargeUrl %>' style="width: 100%" />
-<h3><%= name %></h3>
-Recipe by
-<a href='<%= source.sourceSiteUrl %>'><%= source.sourceDisplayName %></a>
-<p>Rating <%= rating %></p>
-<p>Recipe for <%= numberOfServings %></p>
-<p>Ingredients</p>
-<ul data-role="listview" data-inset="true" class="ingredients">
-<% _.each(ingredientLines, function(ingredient) { %>
-    <li>
-        <%= ingredient %>
-    </li>
-<% }); %>
-</ul>
-<p>Instructions</p>
-<a href='<%= source.sourceRecipeUrl %>'>Read all the instructions on "<%= source.sourceDisplayName %>" website</a>
+<div style="position: relative;">
+	<img src='<%= images[0].hostedLargeUrl %>' style="width: 100%" />
+	<div class="data" style="padding: 0 10px;">
+		<h3><%= name %></h3>
+	</div>
+</div>
+<div class="details-content">	
+	<div data-use="rating"></div>
+	Recipe by
+	<a href='<%= source.sourceSiteUrl %>'><%= source.sourceDisplayName %></a>
+	<p>Recipe for <%= numberOfServings %></p>
+	<strong>Ingredients</strong>
+	<ul data-role="listview" data-inset="true" class="ingredients">
+	<% _.each(ingredientLines, function(ingredient) { %>
+	    <li>
+	        <%= ingredient %>
+	    </li>
+	<% }); %>
+	</ul>
+	<p>
+		<strong>Instructions</strong>
+	</p>
+	<a href='<%= source.sourceRecipeUrl %>'>Read all the instructions on "<%= source.sourceDisplayName %>" website</a>
+</div>
 

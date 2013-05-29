@@ -12,6 +12,12 @@ define([
 
         render: function() {
             this.$el.html(_.template(recipeDetailsTemplate, this.model.toJSON()));
+            this.$('[data-use="rating"]').raty({ 
+                readOnly: true, 
+                score: this.model.get('rating'),
+                width: 150
+            });
+            
             return this;
         }
     });
