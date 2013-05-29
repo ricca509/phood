@@ -38,7 +38,7 @@ div.data {
   width: 100%;
   text-shadow: none;
   position: absolute;
-  bottom: 0;
+  bottom: 3px;
   z-index: 2;
   line-height: 20px;
   background: #000;
@@ -50,6 +50,15 @@ div.data {
 div.data h4 {
   margin: 5px 0;
 }
+.recipeDetails div.data {
+  bottom: 4px;
+}
 .recipeDetails .details-content {
   margin: 10px 10px;
+}
+.recipeDetails .details-content .ui-btn-up-c {
+  font-weight: 400;
+}
+.recipeDetails ul.ingredients li.ingredient {
+  font-weight: 400;
 }

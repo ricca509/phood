@@ -17,7 +17,6 @@ define([
                 score: this.model.get('rating'),
                 width: 150
             });
-            
             return this;
         }
     });
