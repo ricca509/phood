@@ -34,31 +34,35 @@ ul.recipesList li.recipeItem {
   -moz-box-shadow: 0px -1px 2px rgba(50,50,50,0.75);
   box-shadow: 0px -1px 2px rgba(50,50,50,0.75);
 }
+ul.recipesList li.recipeItem img.recipeImage {
+  display: block;
+  width: 100%;
+}
 div.data {
   width: 100%;
   text-shadow: none;
   position: absolute;
-  bottom: 3px;
+  bottom: 0;
   z-index: 2;
   line-height: 20px;
   background: #000;
   color: #fff;
-  -moz-opacity: 0.6;
-  -khtml-opacity: 0.6;
-  opacity: 0.6;
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  opacity: 0.7;
 }
 div.data h3,
 div.data h4 {
   margin: 5px 0;
 }
-.recipeDetails div.data {
-  bottom: 4px;
-}
-.recipeDetails .details-content {
-  margin: 10px 10px;
+.recipeDetails img.recipeImage {
+  display: block;
 }
 .recipeDetails .details-content .ui-btn-up-c {
   font-weight: 400;
+}
+.recipeDetails ul.ingredients {
+  margin: 0;
 }
 .recipeDetails ul.ingredients li.ingredient {
   font-weight: 400;
