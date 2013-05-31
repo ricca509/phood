@@ -43,10 +43,11 @@ div.data {
   line-height: 20px;
   background: #000;
   color: #fff;
-  -moz-opacity: 0.7;
-  -khtml-opacity: 0.7;
-  opacity: 0.7;
+  -moz-opacity: 0.6;
+  -khtml-opacity: 0.6;
+  opacity: 0.6;
 }
+div.data h3,
 div.data h4 {
   margin: 5px 0;
 }

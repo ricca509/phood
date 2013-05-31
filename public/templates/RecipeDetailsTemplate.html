@@ -1,7 +1,8 @@
 <div style="position: relative;">
 	<img class="recipeImage" src='<%= images[0].hostedLargeUrl %>' style="width: 100%" />
-	<div class="data" style="padding: 0 10px;">
-		<h3><%= name %></h3>
+	<div class="data">
+		<h3 style="padding: 5px 10px;"><%= name %></h3>
+		<div style="padding: 0 0 10px 10px;" data-use="rating"></div>
 	</div>
 </div>
 <div class="details-content">	
@@ -15,9 +16,6 @@
 				<% } %>	
 			</span>
 		</li>		
-		<li>
-			<div data-use="rating"></div>
-		</li>
 		<li>
 			<a href='<%= source.sourceSiteUrl %>'>Recipe by <strong><%= source.sourceDisplayName %></strong></a>
 		</li>			
