@@ -1,6 +1,6 @@
 {
   "name": "yummly-mobile-app-jqm",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "An HTML5 mobile application built with backbonejs, requirejs and jQuery Mobile that uses the Yummly API",
   "main": "server.js",
   "dependencies": {
@@ -13,7 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "repository": "",
+  "repository": "https://github.com/ricca509/yummly-mobile-app-jqm",
   "keywords": [
     "yummly"
   ],
