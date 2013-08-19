@@ -19,7 +19,8 @@ define([
 
         addAll: function() {
             this.$el.empty();
-            this.collection.each(this.addOne, this);  
+            this.collection.each(this.addOne, this);
+
         },
 
         addOne: function(recipe) {
@@ -27,7 +28,8 @@ define([
                 model: recipe
             });
 
-            this.$el.prepend(view.render().$el);
+            this.$el.prepend(view.render().$el.fadeIn('slow'));
+
         }        
     });
 

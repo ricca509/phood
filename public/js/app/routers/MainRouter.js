@@ -47,6 +47,7 @@ define([
                     }));
                     recipePage.setFooterView();
                     recipePage.navigate('slide');
+                    $(document).scrollTop();
                 }                
             });                
         },

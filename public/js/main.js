@@ -1,28 +1,36 @@
 require.config({
     baseUrl: 'js',
     paths: {
-        'jquery': 'libs/jquery/jquery.min',
-        'backbone': 'libs/backbone-amd/backbone-min',
-        'underscore': 'libs/underscore-amd/underscore-min',
-        'jquerymobile': 'libs/jquery-mobile/jquery.mobile-1.3.1.min',
-        'jquery-raty': 'libs/jquery-raty/jquery.raty.min',
+        'jquery': '../libs/jquery/jquery.min',
+        'underscore': '../libs/underscore/underscore-min',
+        'backbone': '../libs/backbone/backbone-min',
+        'jquerymobile': '../libs/jquery-mobile-bower/js/jquery.mobile-1.3.2.min',
+        'jquery-raty': '../libs/jquery-raty/lib/jquery.raty.min',
         'app': './app',
         'templates': '../templates'
-    }
+    },
+    shim: {
+      underscore: {
+          exports: "_"
+      },
+      backbone: {
+          deps: ['underscore', 'jquery'],
+          exports: 'Backbone'
+      }
+  }
 });
 
-require([
-    "jquery",
-    "backbone",
-    "app/routers/MainRouter",
-    "app/helpers/jQmInit"
-], function ($, Backbone, MainRouter) {
+require(["jquery",
+        "backbone",
+        "app/routers/MainRouter",
+        "app/helpers/jQmInit"
+        ], function ($, Backbone, MainRouter) {
 
-    require([ "jquerymobile" ], function () {
+            require([ "jquerymobile" ], function () {
         // Instantiates a new Backbone.js Mobile Router
         this.router = new MainRouter();
 
         Backbone.history.start();
     });
 
-});
+        });

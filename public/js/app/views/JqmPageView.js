@@ -50,7 +50,7 @@ define([
                 this.$('[data-role="footer"]').remove();
             }
 
-            this.$('[data-role="page"]').on( "pagecreate", $.proxy( this.onPageCreate, this ) );
+            this.$el.on( "pagechange", $.proxy( this.onPageChange, this ) );
 
             return this;
         },
@@ -67,9 +67,10 @@ define([
             $.mobile.changePage( page.$el , { changeHash: false, transition: transition } );
         },
 
-        onPageCreate: function() {
+        onPageChange: function() {
             var that = this;
-            console.log('Create event ' + that.cid );
+            console.log('Change event ' + that.cid );
+            $(document).scrollTop();
         }
 
     });
