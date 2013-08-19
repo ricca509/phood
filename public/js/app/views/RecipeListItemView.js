@@ -1,10 +1,10 @@
 define([
     'jquery',
-    'backbone',
     'underscore',
+    'backbone',
     'text!templates/RecipeListItemTemplate.html',
     'jquery-raty'
-], function($, Backbone, _, recipeListItemTemplate) {
+], function($, _, Backbone, recipeListItemTemplate) {
 	var View = Backbone.View.extend({
 		tagName: 'li',
 
@@ -16,15 +16,15 @@ define([
 
 		render: function() {
 			this.$el.html(_.template(recipeListItemTemplate, this.model.toJSON()));
-			this.$('[data-use="rating"]').raty({ 
-				readOnly: true, 
+			this.$('[data-use="rating"]').raty({
+				readOnly: true,
 				score: this.model.get('rating'),
 				width: 150
 			});
 			return this;
 		},
 
-		goToDetails: function() {			
+		goToDetails: function() {
 			Backbone.history.navigate('recipes/' + this.model.id, { trigger: true });
 		}
 	});

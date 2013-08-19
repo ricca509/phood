@@ -1,8 +1,9 @@
 define([
-    'backbone',
+    'jquery',
     'underscore',
+    'backbone',
     'text!templates/jQmPageTemplate.html'
-], function(Backbone, _, jQmPageTemplate) {
+], function($, _, Backbone, jQmPageTemplate) {
 
     var View = Backbone.View.extend({
         initialize: function() {

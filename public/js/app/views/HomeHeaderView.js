@@ -1,9 +1,10 @@
 define([
-    'backbone',
+    'jquery',
     'underscore',
+    'backbone',
     'text!templates/homeHeaderTemplate.html',
     'app/helpers/config'
-], function(Backbone, _, homeHeaderTemplate, config) {
+], function($, _, Backbone, homeHeaderTemplate, config) {
     var View = Backbone.View.extend({
         initialize: function() {
         },
@@ -13,7 +14,7 @@ define([
             if (this.model) {
                 template = _.template(homeHeaderTemplate, { title: this.model.get('name') });
             }
-            
+
             this.$el.html(template);
 
             return this;

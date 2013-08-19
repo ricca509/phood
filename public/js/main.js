@@ -20,11 +20,10 @@ require.config({
   }
 });
 
-require(["jquery",
-        "backbone",
+require(["backbone",
         "app/routers/MainRouter",
         "app/helpers/jQmInit"
-        ], function ($, Backbone, MainRouter) {
+        ], function (Backbone, MainRouter) {
 
             require([ "jquerymobile" ], function () {
         // Instantiates a new Backbone.js Mobile Router

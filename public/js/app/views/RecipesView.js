@@ -1,9 +1,9 @@
 define([
     'jquery',
-    'backbone',
     'underscore',
+    'backbone',
     'app/views/RecipeListItemView'
-], function($, Backbone, _, RecipeListItemView) {
+], function($, _, Backbone, RecipeListItemView) {
     var View = Backbone.View.extend({
         tagName: 'ul',
 
@@ -30,7 +30,7 @@ define([
 
             this.$el.prepend(view.render().$el.fadeIn('slow'));
 
-        }        
+        }
     });
 
     return View;
