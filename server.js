@@ -73,5 +73,5 @@ app.get('/recipes', function(req, res) {
 
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
-	console.log('backbone-requirejs-jquerymobile listening on port ' + port);
+	console.log('Yummly\'s app listening on port ' + port);
 });

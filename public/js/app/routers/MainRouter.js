@@ -22,7 +22,7 @@ define([
         routes: {
             'recipes': 'getRecipes',
             'recipes/q=:q': 'getRecipes',
-            'recipes/:id': 'getRecipe',            
+            'recipes/:id': 'getRecipe',
             '': 'main'
         },
 
@@ -48,8 +48,8 @@ define([
                     recipePage.setFooterView();
                     recipePage.navigate('slide');
                     $(document).scrollTop();
-                }                
-            });                
+                }
+            });
         },
 
         getRecipes: function (q) {
@@ -69,10 +69,10 @@ define([
                 success: function(collection, response, options) {
                     collection.sort();
                     recipesPage.navigate();
-                }                
-            });                    
+                }
+            });
         }
-    })
+    });
 
     return Router;
 });

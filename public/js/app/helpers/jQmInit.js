@@ -8,12 +8,12 @@ define(['jquery'], function($) {
             $.mobile.loader.prototype.options.text = "Yummly's working...";
             $.mobile.loader.prototype.options.textVisible = true;
 
-            // Phonegap 
+            // Phonegap
             $.support.cors = true;
             $.mobile.allowCrossDomainPages = true;
 
             // jQuery Raty
-            $.fn.raty.defaults.path = 'js/libs/jquery-raty/img'
+            $.fn.raty.defaults.path = 'js/libs/jquery-raty/img';
 
             // Remove page from DOM when it's being replaced
             $(document).on('pagehide', 'div[data-role="page"]', function(event, ui){

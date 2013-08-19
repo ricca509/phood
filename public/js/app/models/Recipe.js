@@ -2,7 +2,7 @@ define([
 	'backbone',
 	'app/helpers/config'
 ], function(Backbone, config) {
-	var Model = Backbone.Model.extend({		
+	var Model = Backbone.Model.extend({
         urlRoot: '/recipes'
     });
 
@@ -16,7 +16,7 @@ define([
 		comparator: function(recipe) {
 			return recipe.get('rating');
 		},
-		
+
 		url: function() {
 			if (this.options.q) {
 				return '/recipes/q=' + this.options.q;
@@ -26,7 +26,7 @@ define([
 		},
 
 		parse: function(response) {
-			return response.matches
+			return response.matches;
 		}
 	});
 
