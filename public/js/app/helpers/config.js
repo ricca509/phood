@@ -1,3 +1,4 @@
 define({
-	appName: 'Yummly'	
+	appName: 'Yummly',
+    pageSize: 5
 });

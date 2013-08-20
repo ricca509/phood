@@ -1,14 +1,15 @@
 define([
     'backbone',
     'app/views/AppView',
-    'app/views/RecipesView',
+    'app/views/RecipesListView',
     'app/views/RecipeDetailsView',
     'app/views/HeaderView',
     'app/views/HomeHeaderView',
     'app/views/FooterView',
     'app/views/JqmPageView',
     'app/models/Recipe'
-], function (Backbone, AppView, RecipesView, RecipeDetailsView, HeaderView, HomeHeaderView, FooterView, jqMPageView, Recipe) {
+], function (Backbone, AppView, RecipesListView, RecipeDetailsView, HeaderView,
+             HomeHeaderView, FooterView, jqMPageView, Recipe) {
     var Router = Backbone.Router.extend({
         initialize: function() {
 
@@ -20,8 +21,7 @@ define([
         },
 
         routes: {
-            'recipes': 'getRecipes',
-            'recipes/q=:q': 'getRecipes',
+            'recipes(/q=:q)(/p=:p)(/)': 'getRecipes',
             'recipes/:id': 'getRecipe',
             '': 'main'
         },
@@ -52,15 +52,17 @@ define([
             });
         },
 
-        getRecipes: function (q) {
+        getRecipes: function (q, p) {
+            console.log('q: ' + q + ' p: ' + p);
             $.mobile.loading( 'show' );
             var rCollection = new Recipe.collection({
-                q: q
+                q: q,
+                p: p
             });
 
             var recipesPage = new jqMPageView();
             recipesPage.setHeaderView(new HomeHeaderView());
-            recipesPage.setContentView(new RecipesView({
+            recipesPage.setContentView(new RecipesListView({
                 collection: rCollection
             }));
             recipesPage.setFooterView(new FooterView());
