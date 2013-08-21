@@ -1,6 +1,5 @@
 define([
     'backbone',
-    'app/views/AppView',
     'app/views/RecipesListView',
     'app/views/RecipeDetailsView',
     'app/views/HeaderView',
@@ -8,7 +7,7 @@ define([
     'app/views/FooterView',
     'app/views/JqmPageView',
     'app/models/Recipe'
-], function (Backbone, AppView, RecipesListView, RecipeDetailsView, HeaderView,
+], function (Backbone, RecipesListView, RecipeDetailsView, HeaderView,
              HomeHeaderView, FooterView, jqMPageView, Recipe) {
     var Router = Backbone.Router.extend({
         initialize: function() {
