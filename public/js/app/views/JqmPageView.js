@@ -24,14 +24,20 @@ define([
             } else {
                 $.mobile.page.prototype.options.addBackBtn = false;
             }
+
+            return this;
         },
 
         setFooterView: function(view) {
             this.footerView = view;
+
+            return this;
         },
 
         setContentView: function(view) {
             this.contentView = view;
+
+            return this;
         },
 
         render: function() {

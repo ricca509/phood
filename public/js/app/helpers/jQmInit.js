@@ -13,7 +13,7 @@ define(['jquery'], function($) {
             $.mobile.allowCrossDomainPages = true;
 
             // jQuery Raty
-            $.fn.raty.defaults.path = 'js/libs/jquery-raty/img';
+            $.fn.raty.defaults.path = '/libs/jquery-raty/lib/img';
 
             // Remove page from DOM when it's being replaced
             $(document).on('pagehide', 'div[data-role="page"]', function(event, ui){
