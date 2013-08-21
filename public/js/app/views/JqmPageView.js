@@ -57,8 +57,6 @@ define([
                 this.$('[data-role="footer"]').remove();
             }
 
-            this.$el.on( "pagechange", $.proxy( this.onPageChange, this ) );
-
             return this;
         },
 
