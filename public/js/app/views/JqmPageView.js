@@ -7,7 +7,7 @@ define([
 
     var View = Backbone.View.extend({
         initialize: function() {
-
+            $( document ).on( "pagechange", this.$el, this.onPageChange );
         },
 
         tagName: 'div',
@@ -74,10 +74,8 @@ define([
             $.mobile.changePage( page.$el , { changeHash: false, transition: transition } );
         },
 
-        onPageChange: function() {
-            var that = this;
-            console.log('Change event ' + that.cid );
-            $(document).scrollTop();
+        onPageChange: function(event) {
+            window.scrollTo(0, 0);
         }
 
     });
