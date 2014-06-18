@@ -6,12 +6,12 @@
   "dependencies": {
     "express": "~3.2.5",
     "stylus": "~0.32.1",
-    "yummly": "~0.2.4"
+    "yummly": "~0.2.4",
+    "bower": "^1.3.5"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.3.0",
-    "bower": "^1.3.5"
+    "grunt-contrib-jshint": "~0.3.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
