@@ -3,7 +3,7 @@ define([
 	'app/helpers/config'
 ], function(Backbone, config) {
 	var Model = Backbone.Model.extend({
-        urlRoot: '/recipes'
+        urlRoot: config.baseDomain + '/recipes'
     });
 
 	var Collection = Backbone.Collection.extend({
@@ -18,12 +18,12 @@ define([
 		},
 
 		url: function() {
-			var url = '/recipes';
+			var url = config.baseDomain + '/recipes';
 
 			if (this.options.q) {
 				url += '/q=' + this.options.q;
 			}
-			if (this.options.p) {
+			if (!_.isNaN(this.options.p) && _.isNumber(this.options.p)) {
 				url += '/s=' + (this.options.p - 1) * config.pageSize;
 			} else {
 				url += '/s=' + 0;
@@ -52,7 +52,7 @@ define([
 
 		parse: function(response) {
 			this.total = response.totalMatchCount;
-			this.skipped = response.criteria.resultsToSkip;
+			this.skipped = response.criteria.resultsToSkip || 0;
 			this.pageNumber = Math.round(this.skipped / config.pageSize) + 1;
 
 			return response.matches;

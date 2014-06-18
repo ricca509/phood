@@ -36,7 +36,7 @@ define([
             });
 
             rModel.fetch({
-                success: function(model, response, options) {
+                success: function(model) {
                     var recipePage = new jqMPageView();
                     recipePage.setHeaderView(new HeaderView({
                         model: model
@@ -67,7 +67,7 @@ define([
             recipesPage.setFooterView(new FooterView());
             rCollection.fetch({
                 reset: true,
-                success: function(collection, response, options) {
+                success: function(collection) {
                     collection.sort();
                     recipesPage.navigate();
                 }
