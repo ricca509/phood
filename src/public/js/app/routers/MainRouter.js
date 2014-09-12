@@ -48,12 +48,9 @@ define([
 
         getRecipes: function (query, page) {
             console.log('query (q): ' + query + ' page (p): ' + page);
-            $.mobile.loading( 'show' );
-            if (!_.isNaN(parseInt(page, 10))) {
-                page = parseInt(page, 10);
-            } else {
-                page = 0;
-            }
+            $.mobile.loading( 'show' );            
+
+            page = !_.isNaN(parseInt(page, 10)) ? parseInt(page, 10) : 0;
 
             var rCollection = new Recipe.collection({
                 q: query,

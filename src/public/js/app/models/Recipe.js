@@ -40,7 +40,7 @@ define([
 			if (direction === 'next') {
 				page = this.options.page + 1;
 			} else if (direction === 'prev') {
-				page = this.options.page > 1 ? this.options.page - 1 : 1;
+				page = this.options.page > 0 ? this.options.page - 1 : 0;
 			}
 
 			if (this.options.q) {
@@ -52,8 +52,6 @@ define([
 
 		parse: function (response) {
 			this.total = response.totalMatchCount;
-			//this.skipped = response.criteria.resultsToSkip || 0;
-			//this.pageNumber = Math.round(this.skipped / config.pageSize) + 1;
 
 			return response.matches;
 		}
