@@ -12,12 +12,7 @@ define([
         template: _.template(headerTemplate),
 
         render: function() {
-            var template = this.template({ title: config.appName });
-            if (this.model) {
-                template = this.template({ title: this.model.get('name') });
-            }
-
-            this.$el.html(template);
+            this.$el.html(this.template({ title: config.appName }));
 
             return this;
         }
