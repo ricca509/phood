@@ -17,7 +17,8 @@
   },
   "scripts": {
     "test": "grunt jasmine",
-    "start": "node src/server/server.js"
+    "start": "node src/server/server.js",
+    "postinstall": "./node_modules/bower/bin/bower cache clean && ./node_modules/bower/bin/bower install"
   },
   "repository": "https://github.com/ricca509/yummly-mobile-app-jqm",
   "keywords": [
