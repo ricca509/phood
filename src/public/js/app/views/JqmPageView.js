@@ -6,7 +6,7 @@ define([
 ], function($, _, Backbone, jQmPageTemplate) {
 
     var View = Backbone.View.extend({
-        initialize: function() {
+        initialize: function () {
             $( document ).on( "pagechange", this.$el, this.onPageChange );
         },
 
@@ -16,7 +16,7 @@ define([
             'data-role': 'page'
         },
 
-        setHeaderView: function(view, addBackButton) {
+        setHeaderView: function (view, addBackButton) {
             this.headerView = view;
 
             $.mobile.page.prototype.options.addBackBtn = ( addBackButton === true ) ? true : false;
@@ -24,19 +24,19 @@ define([
             return this;
         },
 
-        setFooterView: function(view) {
+        setFooterView: function (view) {
             this.footerView = view;
 
             return this;
         },
 
-        setContentView: function(view) {
+        setContentView: function (view) {
             this.contentView = view;
 
             return this;
         },
 
-        render: function() {
+        render: function () {
             this.$el.html(_.template(jQmPageTemplate));
 
             if (this.headerView) {
@@ -56,7 +56,7 @@ define([
             return this;
         },
 
-        navigate: function(transition) {
+        navigate: function (transition) {
             var page = this.render();
 
             transition = transition || $.mobile.defaultPageTransition;
@@ -68,7 +68,7 @@ define([
             $.mobile.changePage( page.$el , { changeHash: false, transition: transition } );
         },
 
-        onPageChange: function(event) {
+        onPageChange: function () {
             window.scrollTo(0, 0);
         }
 

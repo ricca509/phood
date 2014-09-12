@@ -10,7 +10,7 @@ define([
 ], function (Backbone, RecipesListView, RecipeDetailsView, HeaderView,
              HomeHeaderView, FooterView, jqMPageView, Recipe) {
     var Router = Backbone.Router.extend({
-        initialize: function() {
+        initialize: function () {
 
             // Handle back button throughout the application
             $(document).on('click', '[data-rel="back"]', function(event) {
@@ -29,34 +29,35 @@ define([
             this.navigate('recipes', { trigger: true });
         },
 
-        getRecipe: function(id) {
+        getRecipe: function (id) {
             $.mobile.loading( 'show' );
             var rModel = new Recipe.model({
                 id: id
             });
 
-            rModel.fetch({
-                success: function(model) {
-                    var recipePage = new jqMPageView();
-                    recipePage.setHeaderView(new HeaderView({
-                        model: model
-                    }), true);
-                    recipePage.setContentView(new RecipeDetailsView({
-                        model: model
-                    }));
-                    recipePage.setFooterView();
-                    recipePage.navigate('slide');
-                    $(document).scrollTop();
-                }
+            var recipePage = new jqMPageView();
+
+
+            rModel.fetch().done(function () {
+                recipePage.setHeaderView(new HeaderView({ model: rModel }, true));
+                recipePage.setContentView(new RecipeDetailsView({ model: rModel }));
+                recipePage.setFooterView();
+                recipePage.navigate('slide');
             });
         },
 
-        getRecipes: function (q, p) {
-            console.log('q: ' + q + ' p: ' + p);
+        getRecipes: function (query, page) {
+            console.log('query (q): ' + query + ' page (p): ' + page);
             $.mobile.loading( 'show' );
+            if (!_.isNaN(parseInt(page, 10))) {
+                page = parseInt(page, 10);
+            } else {
+                page = 0;
+            }
+
             var rCollection = new Recipe.collection({
-                q: q,
-                p: p
+                q: query,
+                page: page
             });
 
             var recipesPage = new jqMPageView();
@@ -65,13 +66,13 @@ define([
                 collection: rCollection
             }));
             recipesPage.setFooterView(new FooterView());
-            rCollection.fetch({
-                reset: true,
-                success: function(collection) {
-                    collection.sort();
+
+            rCollection
+                .fetch({ reset: true })
+                .done(function () {
+                    rCollection.sort();
                     recipesPage.navigate();
-                }
-            });
+                });
         }
     });
 

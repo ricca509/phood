@@ -9,10 +9,12 @@ define([
         initialize: function() {
         },
 
+        template: _.template(headerTemplate),
+
         render: function() {
-            var template = _.template(headerTemplate, { title: config.appName });
+            var template = this.template({ title: config.appName });
             if (this.model) {
-                template = _.template(headerTemplate, { title: this.model.get('name') });
+                template = this.template({ title: this.model.get('name') });
             }
 
             this.$el.html(template);

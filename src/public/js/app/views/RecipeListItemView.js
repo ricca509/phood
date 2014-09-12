@@ -10,12 +10,15 @@ define([
 
 		className: 'recipeItem',
 
+        template: _.template(recipeListItemTemplate),
+
 		events: {
 			'click a': 'goToDetails'
 		},
 
 		render: function() {
-			this.$el.html(_.template(recipeListItemTemplate, this.model.toJSON()));
+			this.$el.html( this.template(_.extend({}, this.model.toJSON())) );
+
 			this.$('[data-use="rating"]').raty({
 				readOnly: true,
 				score: this.model.get('rating'),
