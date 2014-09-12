@@ -37,7 +37,6 @@ define([
 
             var recipePage = new jqMPageView();
 
-
             rModel.fetch().done(function () {
                 recipePage.setHeaderView(new HeaderView({ model: rModel }, true));
                 recipePage.setContentView(new RecipeDetailsView({ model: rModel }));
@@ -48,7 +47,7 @@ define([
 
         getRecipes: function (query, page) {
             console.log('query (q): ' + query + ' page (p): ' + page);
-            $.mobile.loading( 'show' );            
+            $.mobile.loading( 'show' );
 
             page = !_.isNaN(parseInt(page, 10)) ? parseInt(page, 10) : 0;
 

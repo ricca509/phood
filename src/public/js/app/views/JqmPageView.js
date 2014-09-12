@@ -19,7 +19,7 @@ define([
         setHeaderView: function (view, addBackButton) {
             this.headerView = view;
 
-            $.mobile.page.prototype.options.addBackBtn = ( addBackButton === true ) ? true : false;
+            //$.mobile.page.prototype.options.addBackBtn = ( addBackButton === true ) ? true : false;
 
             return this;
         },
