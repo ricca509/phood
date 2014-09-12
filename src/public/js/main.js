@@ -5,7 +5,7 @@ require.config({
         'underscore': '../libs/underscore/underscore-min',
         'backbone': '../libs/backbone/backbone-min',
         'jquerymobile': '../libs/jquery-mobile-bower/js/jquery.mobile-1.3.2.min',
-        'jquery-raty': '../libs/jquery-raty/lib/jquery.raty.min',
+        'jquery-raty': '../libs/raty/lib/jquery.raty',
         'app': './app',
         'templates': '../templates'
     },

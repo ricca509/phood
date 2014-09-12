@@ -14,7 +14,7 @@
     "requirejs": "git://github.com/jrburke/requirejs.git#~2.1.8",
     "backbone": "~1.0.0",
     "underscore": "~1.5.1",
-    "jquery-mobile-bower": "~1.3.2",    
-    "jquery-raty": "https://github.com/wbotelhos/raty.git#2.5.2"
+    "jquery-mobile-bower": "~1.3.2",
+    "raty": "~2.7.0"
   }
 }
