@@ -5,7 +5,7 @@ define(['jquery'], function($) {
             $.mobile.linkBindingEnabled = false;
             $.mobile.hashListeningEnabled = false;
             $.mobile.pushStateEnabled = false;
-            $.mobile.loader.prototype.options.text = "Yummly's working...";
+            $.mobile.loader.prototype.options.text = "phood's working...";
             $.mobile.loader.prototype.options.textVisible = true;
 
             // Phonegap
