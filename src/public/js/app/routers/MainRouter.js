@@ -44,8 +44,7 @@ define([
             });
         },
 
-        getRecipes: function (query, page) {
-            console.log('query (q): ' + query + ' page (p): ' + page);
+        getRecipes: function (query, page) {            
             $.mobile.loading( 'show' );
 
             page = !_.isNaN(parseInt(page, 10)) ? parseInt(page, 10) : 0;

@@ -16,8 +16,7 @@ define(['jquery'], function($) {
             $.fn.raty.defaults.path = '/libs/raty/lib/images';
 
             // Remove page from DOM when it's being replaced
-            $(document).on('pagehide', 'div[data-role="page"]', function(event, ui){
-                console.log('remove ' + event.currentTarget);
+            $(document).on('pagehide', 'div[data-role="page"]', function(event, ui){                
                 $(event.currentTarget).remove();
             });
         }
