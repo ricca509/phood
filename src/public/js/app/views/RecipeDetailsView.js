@@ -2,16 +2,18 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!templates/RecipeDetailsTemplate.html'
-], function($, _, Backbone, recipeDetailsTemplate) {
+    'jstTemplates'
+], function($, _, Backbone) {
     var View = Backbone.View.extend({
 
         tagName: 'div',
 
         className: 'recipeDetails',
 
+        template: JST['RECIPEDETAILS'],
+
         render: function() {
-            this.$el.html(_.template(recipeDetailsTemplate, this.model.toJSON()));
+            this.$el.html(this.template(this.model.toJSON()));
             this.$('[data-use="rating"]').raty({
                 readOnly: true,
                 score: this.model.get('rating'),

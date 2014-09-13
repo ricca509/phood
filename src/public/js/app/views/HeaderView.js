@@ -2,14 +2,11 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!templates/headerTemplate.html',
-    'app/helpers/config'
-], function($, _, Backbone, headerTemplate, config) {
+    'app/helpers/config',
+    'jstTemplates'
+], function($, _, Backbone, config) {
     var View = Backbone.View.extend({
-        initialize: function() {
-        },
-
-        template: _.template(headerTemplate),
+        template: JST['HEADER'],
 
         render: function() {
             this.$el.html(this.template({ title: config.appName }));

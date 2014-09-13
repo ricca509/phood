@@ -2,22 +2,14 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!templates/homeHeaderTemplate.html',
-    'app/helpers/config'
-], function($, _, Backbone, homeHeaderTemplate, config) {
+    'app/helpers/config',
+    'jstTemplates'
+], function($, _, Backbone, config) {
     var View = Backbone.View.extend({
-        initialize: function() {
-        },
-
-        template: _.template(homeHeaderTemplate),
+        template: JST['HOMEHEADER'],
 
         render: function() {
-            var template = this.template({ title: config.appName });
-            if (this.model) {
-                template = this.template({ title: this.model.get('name') });
-            }
-
-            this.$el.html(template);
+            this.$el.html(this.template({ title: config.appName }));
 
             return this;
         }

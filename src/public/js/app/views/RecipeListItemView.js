@@ -2,22 +2,22 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!templates/RecipeListItemTemplate.html',
-    'jquery-raty'
-], function($, _, Backbone, recipeListItemTemplate) {
+    'jquery-raty',
+    'jstTemplates'
+], function($, _, Backbone) {
 	var View = Backbone.View.extend({
 		tagName: 'li',
 
 		className: 'recipeItem',
 
-        template: _.template(recipeListItemTemplate),
+        template: JST['RECIPELISTITEM'],
 
 		events: {
 			'click a': 'goToDetails'
 		},
 
 		render: function() {
-			this.$el.html( this.template(_.extend({}, this.model.toJSON())) );
+			this.$el.html(this.template(this.model.toJSON()));
 
 			this.$('[data-use="rating"]').raty({
 				readOnly: true,

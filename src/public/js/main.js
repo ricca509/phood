@@ -7,7 +7,8 @@ require.config({
         'jquerymobile': '../libs/jquery-mobile-bower/js/jquery.mobile-1.3.2.min',
         'jquery-raty': '../libs/raty/lib/jquery.raty',
         'app': './app',
-        'templates': '../templates'
+        'templates': '../templates',
+        'jstTemplates': '../compiled/templates/templates'
     },
     shim: {
         underscore: {

@@ -22,11 +22,30 @@ module.exports = function(grunt) {
                     }
                 }
             }
+        },
+        jst: {
+            compile: {
+                options: {
+                    amd: true,
+                    processName: function (filepath) {
+                        return filepath
+                            .split('/')
+                            .pop()
+                            .split('.')
+                            .shift()
+                            .toUpperCase();
+                    }
+                },
+                files: {
+                    "src/public/compiled/templates/templates.js": ["src/public/templates/**/*.html"]
+                }
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
+    grunt.loadNpmTasks('grunt-contrib-jst');
 
-    grunt.registerTask('default', ['jshint']);
+    grunt.registerTask('default', ['jst']);
 };

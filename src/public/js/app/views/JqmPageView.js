@@ -2,13 +2,15 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!templates/jQmPageTemplate.html'
-], function($, _, Backbone, jQmPageTemplate) {
+    'jstTemplates'
+], function($, _, Backbone) {
 
     var View = Backbone.View.extend({
         initialize: function () {
             $( document ).on( "pagechange", this.$el, this.onPageChange );
         },
+
+        template: JST['JQMPAGE'],
 
         tagName: 'div',
 
@@ -18,9 +20,6 @@ define([
 
         setHeaderView: function (view, addBackButton) {
             this.headerView = view;
-
-            //$.mobile.page.prototype.options.addBackBtn = ( addBackButton === true ) ? true : false;
-
             return this;
         },
 
@@ -37,7 +36,7 @@ define([
         },
 
         render: function () {
-            this.$el.html(_.template(jQmPageTemplate));
+            this.$el.html(this.template);
 
             if (this.headerView) {
                 this.$('[data-role="header"]').html(this.headerView.render().$el.children());

@@ -11,7 +11,6 @@ define([
              HomeHeaderView, FooterView, jqMPageView, Recipe) {
     var Router = Backbone.Router.extend({
         initialize: function () {
-
             // Handle back button throughout the application
             $(document).on('click', '[data-rel="back"]', function(event) {
                 window.history.back();
