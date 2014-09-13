@@ -5,7 +5,7 @@
 		<div style="padding: 0 0 10px 10px;" data-use="rating"></div>
 	</div>
 </div>
-<div class="details-content">	
+<div class="details-content">
 	<ul data-role="listview" class="ingredients">
 		<li data-role="list-divider" data-theme="c">
 			<strong>Info</strong>
@@ -13,12 +13,18 @@
 				Serving/s: <strong><%= numberOfServings %></strong>
 				<% if (totalTimeInSeconds) { %>
 					- Cooking time: <strong><%= totalTimeInSeconds / 60 %>'</strong>
-				<% } %>	
+				<% } %>
 			</span>
-		</li>		
+		</li>
 		<li>
 			<a href='<%= source.sourceSiteUrl %>'>Recipe by <strong><%= source.sourceDisplayName %></strong></a>
-		</li>			
+		</li>
+		<li data-role="list-divider" data-theme="c">
+			<strong>Cooking instructions (from "<%= source.sourceDisplayName %>") </strong>
+		</li>
+		<li>
+			<a href='<%= source.sourceRecipeUrl %>'><strong>Read all the instructions</strong></a>
+		</li>
 		<li data-role="list-divider" data-theme="c">
 			<strong>Ingredients</strong>
 		</li>
@@ -29,18 +35,11 @@
 		<% }); %>
 		<li data-role="list-divider" data-theme="c">
 			<strong>Nutritional estimates</strong>
-		</li>		
+		</li>
 		<% _.each(nutritionEstimates, function(nutrition) { %>
 	    <li>
 	        <strong><%= nutrition.description %></strong>: <%= nutrition.value %><%= nutrition.unit.abbreviation %>
 	    </li>
-		<% }); %>		
-		<li data-role="list-divider" data-theme="c">
-			<strong>Cooking instructions (from "<%= source.sourceDisplayName %>") </strong>
-		</li>
-		<li>
-			<a href='<%= source.sourceRecipeUrl %>'><strong>Read all the instructions</strong></a>
-		</li>
-	</ul>	
+		<% }); %>
+	</ul>
 </div>
-

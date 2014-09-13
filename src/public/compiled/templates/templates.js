@@ -11,7 +11,7 @@ __p += '<div style="position: relative;">\n\t<img class="recipeImage" src=\'' +
 ((__t = ( images[0].hostedLargeUrl )) == null ? '' : __t) +
 '\' style="width: 100%" />\n\t<div class="data">\n\t\t<h3 style="padding: 5px 10px;">' +
 ((__t = ( name )) == null ? '' : __t) +
-'</h3>\n\t\t<div style="padding: 0 0 10px 10px;" data-use="rating"></div>\n\t</div>\n</div>\n<div class="details-content">\t\n\t<ul data-role="listview" class="ingredients">\n\t\t<li data-role="list-divider" data-theme="c">\n\t\t\t<strong>Info</strong>\n\t\t\t<span class="ui-li-count">\n\t\t\t\tServing/s: <strong>' +
+'</h3>\n\t\t<div style="padding: 0 0 10px 10px;" data-use="rating"></div>\n\t</div>\n</div>\n<div class="details-content">\n\t<ul data-role="listview" class="ingredients">\n\t\t<li data-role="list-divider" data-theme="c">\n\t\t\t<strong>Info</strong>\n\t\t\t<span class="ui-li-count">\n\t\t\t\tServing/s: <strong>' +
 ((__t = ( numberOfServings )) == null ? '' : __t) +
 '</strong>\n\t\t\t\t';
  if (totalTimeInSeconds) { ;
@@ -19,17 +19,21 @@ __p += '\n\t\t\t\t\t- Cooking time: <strong>' +
 ((__t = ( totalTimeInSeconds / 60 )) == null ? '' : __t) +
 '\'</strong>\n\t\t\t\t';
  } ;
-__p += '\t\n\t\t\t</span>\n\t\t</li>\t\t\n\t\t<li>\n\t\t\t<a href=\'' +
+__p += '\n\t\t\t</span>\n\t\t</li>\n\t\t<li>\n\t\t\t<a href=\'' +
 ((__t = ( source.sourceSiteUrl )) == null ? '' : __t) +
 '\'>Recipe by <strong>' +
 ((__t = ( source.sourceDisplayName )) == null ? '' : __t) +
-'</strong></a>\n\t\t</li>\t\t\t\n\t\t<li data-role="list-divider" data-theme="c">\n\t\t\t<strong>Ingredients</strong>\n\t\t</li>\n\t\t';
+'</strong></a>\n\t\t</li>\n\t\t<li data-role="list-divider" data-theme="c">\n\t\t\t<strong>Cooking instructions (from "' +
+((__t = ( source.sourceDisplayName )) == null ? '' : __t) +
+'") </strong>\n\t\t</li>\n\t\t<li>\n\t\t\t<a href=\'' +
+((__t = ( source.sourceRecipeUrl )) == null ? '' : __t) +
+'\'><strong>Read all the instructions</strong></a>\n\t\t</li>\n\t\t<li data-role="list-divider" data-theme="c">\n\t\t\t<strong>Ingredients</strong>\n\t\t</li>\n\t\t';
  _.each(ingredientLines, function(ingredient) { ;
 __p += '\n\t    <li class="ingredient">\n\t        ' +
 ((__t = ( ingredient )) == null ? '' : __t) +
 '\n\t    </li>\n\t\t';
  }); ;
-__p += '\n\t\t<li data-role="list-divider" data-theme="c">\n\t\t\t<strong>Nutritional estimates</strong>\n\t\t</li>\t\t\n\t\t';
+__p += '\n\t\t<li data-role="list-divider" data-theme="c">\n\t\t\t<strong>Nutritional estimates</strong>\n\t\t</li>\n\t\t';
  _.each(nutritionEstimates, function(nutrition) { ;
 __p += '\n\t    <li>\n\t        <strong>' +
 ((__t = ( nutrition.description )) == null ? '' : __t) +
@@ -39,11 +43,7 @@ __p += '\n\t    <li>\n\t        <strong>' +
 ((__t = ( nutrition.unit.abbreviation )) == null ? '' : __t) +
 '\n\t    </li>\n\t\t';
  }); ;
-__p += '\t\t\n\t\t<li data-role="list-divider" data-theme="c">\n\t\t\t<strong>Cooking instructions (from "' +
-((__t = ( source.sourceDisplayName )) == null ? '' : __t) +
-'") </strong>\n\t\t</li>\n\t\t<li>\n\t\t\t<a href=\'' +
-((__t = ( source.sourceRecipeUrl )) == null ? '' : __t) +
-'\'><strong>Read all the instructions</strong></a>\n\t\t</li>\n\t</ul>\t\n</div>\n\n';
+__p += '\n\t</ul>\n</div>\n';
 
 }
 return __p
