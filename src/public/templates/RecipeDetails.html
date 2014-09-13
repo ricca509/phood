@@ -33,13 +33,15 @@
 	        <%= ingredient %>
 	    </li>
 		<% }); %>
-		<li data-role="list-divider" data-theme="c">
-			<strong>Nutritional estimates</strong>
-		</li>
-		<% _.each(nutritionEstimates, function(nutrition) { %>
-	    <li>
-	        <strong><%= nutrition.description %></strong>: <%= nutrition.value %><%= nutrition.unit.abbreviation %>
-	    </li>
-		<% }); %>
+		<% if (!_.isEmpty(nutritionEstimates)) { %>
+			<li data-role="list-divider" data-theme="c">
+				<strong>Nutritional estimates</strong>
+			</li>
+			<% _.each(nutritionEstimates, function(nutrition) { %>
+		    <li>
+		        <strong><%= nutrition.description %></strong>: <%= nutrition.value %><%= nutrition.unit.abbreviation %>
+		    </li>
+			<% }); %>
+		<% } %>
 	</ul>
 </div>

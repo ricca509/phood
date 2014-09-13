@@ -12,7 +12,7 @@ define([
     var Router = Backbone.Router.extend({
         initialize: function () {
             // Handle back button throughout the application
-            $(document).on('click', '[data-rel="back"]', function(event) {
+            $(document).on('click', '[data-rel="back"]', function (event) {
                 window.history.back();
                 return false;
             });
@@ -25,7 +25,7 @@ define([
         },
 
         main: function () {
-            this.navigate('recipes', { trigger: true });
+            this.getRecipes();
         },
 
         getRecipe: function (id) {
@@ -35,17 +35,19 @@ define([
             });
 
             var recipePage = new jqMPageView();
+            recipePage.setHeaderView(new HeaderView({ model: rModel }, true));
+            recipePage.setContentView(new RecipeDetailsView({ model: rModel }));
+            recipePage.setFooterView();
 
-            rModel.fetch().done(function () {
-                recipePage.setHeaderView(new HeaderView({ model: rModel }, true));
-                recipePage.setContentView(new RecipeDetailsView({ model: rModel }));
-                recipePage.setFooterView();
-                recipePage.navigate('slide');
-            });
+            rModel
+                .fetch()
+                .done(function () {                    
+                    recipePage.navigate('slide');
+                });
         },
 
-        getRecipes: function (query, page) {            
-            $.mobile.loading( 'show' );
+        getRecipes: function (query, page) {
+            $.mobile.loading('show');
 
             page = !_.isNaN(parseInt(page, 10)) ? parseInt(page, 10) : 0;
 

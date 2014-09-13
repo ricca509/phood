@@ -33,16 +33,20 @@ __p += '\n\t    <li class="ingredient">\n\t        ' +
 ((__t = ( ingredient )) == null ? '' : __t) +
 '\n\t    </li>\n\t\t';
  }); ;
-__p += '\n\t\t<li data-role="list-divider" data-theme="c">\n\t\t\t<strong>Nutritional estimates</strong>\n\t\t</li>\n\t\t';
+__p += '\n\t\t';
+ if (!_.isEmpty(nutritionEstimates)) { ;
+__p += '\n\t\t\t<li data-role="list-divider" data-theme="c">\n\t\t\t\t<strong>Nutritional estimates</strong>\n\t\t\t</li>\n\t\t\t';
  _.each(nutritionEstimates, function(nutrition) { ;
-__p += '\n\t    <li>\n\t        <strong>' +
+__p += '\n\t\t    <li>\n\t\t        <strong>' +
 ((__t = ( nutrition.description )) == null ? '' : __t) +
 '</strong>: ' +
 ((__t = ( nutrition.value )) == null ? '' : __t) +
 '' +
 ((__t = ( nutrition.unit.abbreviation )) == null ? '' : __t) +
-'\n\t    </li>\n\t\t';
+'\n\t\t    </li>\n\t\t\t';
  }); ;
+__p += '\n\t\t';
+ } ;
 __p += '\n\t</ul>\n</div>\n';
 
 }
