@@ -24,7 +24,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app/server.js",
     "postinstall": "./node_modules/bower/bin/bower cache clean && ./node_modules/bower/bin/bower install",
-    "traceur": "./node_modules/traceur/traceur --modules=commonjs --experimental --source-maps --dir app/assets/js/application es5/"
+    "traceur": "./node_modules/traceur/traceur --modules=commonjs --experimental --source-maps --out es5/application.js app/assets/js/application/application.js"
   },
   "repository": "https://github.com/ricca509/phood",
   "keywords": [

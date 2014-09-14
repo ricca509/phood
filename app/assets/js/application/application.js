@@ -1,6 +1,6 @@
 // greeter.js
 class Greeter {
-  sayHi(name = 'Anonymous') {
+  sayHi(name = 'Non so chi sei') {
     console.log(`Hi ${name}!`);
   }
 }
