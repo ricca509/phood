@@ -1,3 +1,5 @@
 .idea/
 node_modules/
-public/libs/
+app/assets/js/lib/
+build/
+dist/

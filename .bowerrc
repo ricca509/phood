@@ -1,4 +1,3 @@
 {
-  "directory": "public/libs"
+  "directory": "app/assets/js/lib"
 }
-
