@@ -18,13 +18,15 @@
     "grunt-traceur": "^0.2.7",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-contrib-uglify": "^0.5.1",
-    "traceur": "0.0.62"
+    "traceur": "0.0.62",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-shell": "^1.1.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app/server.js",
     "postinstall": "./node_modules/bower/bin/bower cache clean && ./node_modules/bower/bin/bower install",
-    "traceur": "./node_modules/traceur/traceur --modules=commonjs --experimental --source-maps --out es5/application.js app/assets/js/application/application.js"
+    "traceur": "./node_modules/traceur/traceur --modules=inline --experimental --source-maps --out es5/application.js app/assets/js/application/application.js"
   },
   "repository": "https://github.com/ricca509/phood",
   "keywords": [

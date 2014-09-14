@@ -1,5 +1,5 @@
 module.exports = {
-    options: {        
+    options: {
         sourceMaps: true,
         experimental:true,  // Turn on all experimental features
         blockBinding: true  // Turn on support for let and const

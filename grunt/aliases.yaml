@@ -1,2 +1,4 @@
 default:
     - 'newer:jshint'
+    - 'clean:build'
+    - 'shell:traceur'     
