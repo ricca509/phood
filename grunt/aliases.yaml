@@ -1,4 +1,14 @@
 default:
+    - 'build'
+
+traceur:
+    - 'shell:traceur'
+
+build:
     - 'newer:jshint'
     - 'clean:build'
-    - 'shell:traceur'     
+    - 'traceur'
+
+dev:
+    - 'build'
+    - 'watch'
