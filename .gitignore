@@ -1,6 +1,6 @@
 .idea/
 node_modules/
-app/assets/js/lib/
+app/assets/lib/
 build/
 dist/
 es5/
